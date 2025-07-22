@@ -150,5 +150,52 @@ if validate:
 else:
     print("Fecha invalida")
 
+#precioyviaje
+weight = float(input("Ingrese el peso del paquete en kilogramos: "))
+dist = float(input("Ingrese la distancia en kilómetros: "))
+urgencia = input("¿Urgente? (si/no): ").lower()
+tamanio = input("Tamaño del paquete? (pequeño/mediano/grande): ").lower()
+
+preciopeso = weight * 10
+preciodist = dist * 10
+baseprice = preciopeso + preciodist
+
+recargourgencia = 0
+recargotamanio = 0
+descuento = 0
+
+if urgencia == "si":
+    recargo_urgencia = 50
+    baseprice += recargourgencia
+
+if tamanio == "grande":
+    recargo_tamanio = 30
+    baseprice += recargotamanio
+
+if urgencia == "no" and weight < 5:
+    descuento = 20
+    baseprice -= descuento
+
+#desglose
+print(f"Costo por peso: {weight} kg x Q10: {preciopeso}")
+print(f"Costo por distancia: {dist} km x Q10: {preciodist}")
+print(f"Subtotal: Q{preciopeso + preciodist}")
+
+if recargourgencia > 0:
+    print(f"Recargo por urgencia: {recargourgencia}")
+
+if recargotamanio > 0:
+    print(f"Recargo por urgencia: {recargotamanio}")
+
+if descuento > 0:
+    print(f"Descuento (No urgente y menor a 5kg de peso: {descuento}")
+
+print(f"Total a pagar: {baseprice}")
+
+
+
+
+
+
 
 
