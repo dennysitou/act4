@@ -54,3 +54,29 @@ else:
     print("La deduccion por dependientes es de:  ", dependents * 1000)
 
 
+
+#penalizacion
+valid_users = {"admin123", "chepito22", "emebd"}
+intentos = 3
+acceso = False
+
+while intentos > 0:
+    password = input("Ingrese su password: ")
+    if password in valid_users:
+        acceso = True
+        break
+    else:
+        intentos -= 1
+        if intentos > 0:
+            print(f"le quedan {intentos} intentos")
+        else:
+            print("Acceso bloqueado")
+
+if acceso:
+    print("Menu de opciones")
+    print("1. Ver perfil")
+    print("2. Cambiar contraseña")
+    print("3. Cerrar sesion")
+
+
+
