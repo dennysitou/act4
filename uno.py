@@ -30,4 +30,4 @@ elif (departament in depas):
 if canvote:
     print(f"Bienvenido, {name}. Su centro de votacion esta en {departament} ")
 else:
-    print("No puedes votar")
+    print("No puedes votar.")
