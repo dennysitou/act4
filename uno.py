@@ -223,6 +223,40 @@ else:
 
 print("Precio final a pagar: ", preciofinal)
 
+#comparaciondedias
+dateone = input("Ingrese la fecha 1 (dia/mes/año): ").split('/')
+datetwo = input("Ingrese la fecha 2 (dia/mes/año): ").split('/')
+
+day1, month1, year1 = map(int, dateone)
+day2, month2, year2 = map(int, datetwo)
+
+if year1 > year2:
+    print("La fecha 1 es mayor que la fecha 2")
+elif year1 < year2:
+    print("La fecha 2 es mayor que la fecha 1")
+else:
+    if month1 > month2:
+        print("La fecha 1 es mayor que la fecha 2")
+    elif month1 < month2:
+        print("La fecha 2 es mayor que la fecha 1")
+    else:
+        if day1 > day2:
+            print("La fecha 1 es mayor que la fecha 2")
+        elif day1 < day2:
+            print("La fecha 2 es mayor que la fecha 1")
+        else:
+            print("Las fechas son las mismas")
+
+if month1 == month2 and year1 == year2:
+    print("Las fechas estan en el mismo mes y año")
+else:
+    print("Las fechas no estan en el mismo mes y año")
+
+days1 = year1 * 360 + month1 * 30 + day1
+days2 = year2 * 360 + month2 * 30 + day2
+diference = abs(days1 - days2)
+
+print("La diferencia de dias entre ambas fechas es de: ", diference)
 
 
 
