@@ -194,7 +194,34 @@ print(f"Total a pagar: {baseprice}")
 
 
 
+#calificacionesconcurva
 
+#coordenadas
+
+#promocionescine
+edadd = int(input("Ingrese su edad: "))
+dweek = input("Ingrese el día de la semana: ").lower()
+est = input("Es estudiante? si/no: ").lower() == "si"
+miercoles = dweek == "miércoles" or dweek == "miercoles"
+
+if edadd < 13:
+    print("No puede ver peliculas de mayores de 15 años")
+    exit()
+
+if est:
+    preciobase = 35
+else:
+    preciobase = 50
+
+if miercoles:
+    preciofinal = preciobase
+    promocion = "Promocion 2x1 aplicada"
+else:
+    preciofinal = preciobase
+    promocion = "No promocion disponible"
+
+
+print("Precio final a pagar: ", preciofinal)
 
 
 
