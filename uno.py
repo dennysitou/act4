@@ -110,5 +110,45 @@ print(f"Descuento: Q{descuento1}")
 
 print(f"Total: Q{total}")
 
+#fechas
+day = int(input("Ingrese el día del mes: "))
+month = int(input("Ingrese el mes del año: "))
+year = int(input("Ingrese el año: "))
+validate = True
+
+if month in [4, 6, 9, 11] and day > 30:
+    validate = False
+    print("Este mes solo tiene 30 días")
+elif month == 2:
+    if (year % 400 == 0) or (year % 100 != 0 and year % 4 == 0):
+        maxdias = 29
+    else:
+        maxdias = 28
+    if day > maxdias:
+        validate = False
+        print(f"Febrero de {year} solo tiene {maxdias} días")
+
+if validate:
+    print(f"La fecha es: {day}/{month}/{year}")
+
+    if month < 3:
+        m = month + 12
+        adjusted_year = year - 1
+    else:
+        m = month
+        adjusted_year = year
+
+    k = day
+    D = adjusted_year % 100
+    C = adjusted_year // 100
+
+    d = (k + (13 * (m + 1)) // 5 + D + D // 4 + C // 4 - 2 * C) % 7
+
+    dias_semana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+
+    print(f"El día de la semana es: {dias_semana[d]}")
+else:
+    print("Fecha invalida")
+
 
 
