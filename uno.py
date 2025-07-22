@@ -51,6 +51,6 @@ else:
     elif salary > 100000:
         print("Paga el 20%")
 
-    print("La deduccion por dependientes es de: ", dependents * 1000)
+    print("La deduccion por dependientes es de:  ", dependents * 1000)
 
 
