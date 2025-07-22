@@ -78,5 +78,37 @@ if acceso:
     print("2. Cambiar contraseña")
     print("3. Cerrar sesion")
 
+#factuacion
+productos = []
+while True:
+    precio = input("Ingrese el precio del producto o escriba fin para terminar: ")
+    if precio.lower() == 'fin':
+        break
+    precio_float = float(precio)
+    productos.append(precio_float)
+
+subtotal = sum(productos)
+
+propina = 0
+if input("Desea dejar propina? si/no").lower() == 'si':
+    propina = float(input("Que % desea dejar? "))
+
+descuento = 0
+if input("Tiene tarjeta de credito? si/no").lower() == 'si':
+    descuento = 10
+
+iva =  subtotal * 0.12
+propina1 = subtotal * (propina / 100)
+descuento1 = subtotal * (descuento / 100)
+total = subtotal + iva + propina - descuento
+
+
+print(f"Subtotal: Q{subtotal}")
+print(f"IVA (12%): Q{iva}")
+print(f"Propina: Q{propina1:}")
+print(f"Descuento: Q{descuento1}")
+
+print(f"Total: Q{total}")
+
 
 
